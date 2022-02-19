@@ -46,15 +46,3 @@ jobs:
 
       - name: Run linter 👀
         run: yarn verify
-
-      - name: Generate static site ⚙️
-        run: yarn generate
-
-      - name: Deploy ✈️
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ false && github.ref == 'refs/heads/main' }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          cname: psychedelicclubofdenver.com
-          allow_empty_commit: true
