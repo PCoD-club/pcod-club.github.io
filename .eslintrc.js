@@ -21,4 +21,12 @@ module.exports = {
   rules: {
     "vue/multi-word-component-names": "off",
   },
+  overrides: [
+    {
+      files: ["*.ts", "*.vue"],
+      rules: {
+        "no-undef": "off",
+      },
+    },
+  ],
 };
