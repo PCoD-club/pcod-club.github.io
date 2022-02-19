@@ -5,6 +5,5 @@
   "eslint.packageManager": "yarn",
   "eslint.format.enable": true,
   "eslint.lintTask.enable": true,
-  "editor.formatOnSave": true,
-  "vetur.format.options.tabSize": 4
+  "editor.formatOnSave": true
 }

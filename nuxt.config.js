@@ -11,7 +11,11 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'The Psychedelic Club of Denver is a harm reduction, substance education, and integration community in Denver, CO.' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'The Psychedelic Club of Denver is a harm reduction, substance education, and integration community in Denver, CO.'
+      },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [

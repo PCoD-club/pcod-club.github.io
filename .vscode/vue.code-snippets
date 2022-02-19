@@ -1,0 +1,16 @@
+{
+  "vue": {
+    "scope": "vue",
+    "prefix": "vue",
+    "body": [
+      "<template lang=\"pug\">",
+      "$1",
+      "</template>",
+      "",
+      "<script setup>",
+      "$0",
+      "</script>",
+      ""
+    ]
+  }
+}
