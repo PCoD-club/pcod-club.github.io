@@ -21,4 +21,12 @@ export default defineNuxtConfig({
   },
 
   buildModules: ["@nuxtjs/tailwindcss"],
+
+  publicRuntimeConfig: {
+    MEETUP_GROUP_ID: "23798818",
+  },
+
+  privateRuntimeConfig: {
+    MEETUP_PROXY_URL: "https://api.meetup.com/gql",
+  },
 });
