@@ -2,16 +2,23 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
+    node: true,
+    es2021: true,
+  },
+  parser: "vue-eslint-parser",
+  parserOptions: {
+    ecmaVersion: 2021,
+    sourceType: "module",
+    parser: "@typescript-eslint/parser",
   },
   extends: [
-    '@nuxtjs/eslint-config-typescript',
-    'plugin:nuxt/recommended'
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:vue/vue3-recommended",
+    "prettier",
   ],
-  plugins: [
-  ],
-  // add your custom rules here
+  plugins: ["vue"],
   rules: {
-    'vue/multi-word-component-names': 'off'
-  }
-}
+    "vue/multi-word-component-names": "off",
+  },
+};

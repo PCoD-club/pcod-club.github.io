@@ -1,6 +1,3 @@
-<template lang="pug">
+<script setup></script>
 
-</template>
-
-<script setup>
-</script>
+<template>hello world</template>

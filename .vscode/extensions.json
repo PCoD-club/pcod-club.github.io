@@ -1,6 +1,10 @@
 {
   "recommendations": [
     "dbaeumer.vscode-eslint",
-    "johnsoncodehk.volar"
+    "johnsoncodehk.volar",
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig",
+    "allanoricil.nuxt-vscode-extension",
+    "christian-kohler.path-intellisense"
   ]
 }

@@ -1,8 +1,6 @@
-<script setup>
-import { TabGroup, TabList, Tab } from '@headlessui/vue'
-</script>
+<script setup></script>
 
 <template lang="pug">
-TabGroup.sticky.h-14.bg-purple-800: TabList
-  Tab: abc
+.sticky.w-screen.h-14.bg-purple-800
+  | navbar
 </template>
