@@ -1,10 +1,10 @@
 <script setup>
-const resp = await useLazyFetch("/api/meetup", { method: "POST" });
-const meetup = resp.data;
+const meetup = await useMeetup();
 </script>
 
 <template>
-  <span>
-    {{ meetup }}
-  </span>
+  <h1>
+    <a :href="meetup.url">{{ meetup.name }}</a>
+  </h1>
+  <p v-sanitize="meetup.description"></p>
 </template>

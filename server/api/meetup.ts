@@ -7,6 +7,7 @@ import _ from "lodash";
 const defaultQuery = `
 query ($groupId: ID) {
   group(id: $groupId) {
+    id
     name
     description
     link
@@ -20,9 +21,11 @@ query ($groupId: ID) {
     upcomingEvents(input: {}) {
       edges {
         node {
+          id
           title
           eventUrl
           description
+          eventType
           venue {
             name
             address
@@ -32,7 +35,7 @@ query ($groupId: ID) {
           }
           dateTime
           going
-          images {
+          image {
             baseUrl
             id
           }

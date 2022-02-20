@@ -19,18 +19,23 @@
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^5.0.0-2",
     "@types/lodash": "^4.14.178",
+    "@types/luxon": "^2.0.9",
+    "@types/sanitize-html": "^2.6.2",
     "@typescript-eslint/eslint-plugin": "^5.12.0",
     "@typescript-eslint/parser": "^5.12.0",
     "@vue/eslint-config-standard": "^6.1.0",
     "axios": "^0.26.0",
+    "datebook": "^7.0.8",
     "eslint": "^8.9.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-vue": "^8.4.1",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.4",
     "lodash": "^4.17.21",
+    "luxon": "^2.3.0",
     "nuxt3": "latest",
     "prettier": "^2.5.1",
+    "sanitize-html": "^2.7.0",
     "typescript": "^4.5.5",
     "vue-tsc": "^0.31.4"
   }

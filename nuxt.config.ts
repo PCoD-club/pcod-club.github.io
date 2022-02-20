@@ -22,6 +22,10 @@ export default defineNuxtConfig({
 
   buildModules: ["@nuxtjs/tailwindcss"],
 
+  build: {
+    transpile: ["luxon"],
+  },
+
   publicRuntimeConfig: {
     MEETUP_GROUP_ID: "23798818",
   },
