@@ -10,16 +10,21 @@ export class MeetupImage {
 
   constructor(data: Response.ImageData) {
     this.id = data.id;
-    this.base = new URL(this.id, data.baseUrl);
+    this.base = new URL(`${this.id}/`, data.baseUrl);
   }
 
-  url(width = 480, height = 480, format: MeetupImageType = "webp"): URL {
+  url({
+    size = [480, 480] as [number, number],
+    format = "webp" as MeetupImageType,
+  } = {}): URL {
+    const [width, height] = size;
     const filename = `${width}x${height}.${format}`;
     return new URL(filename, this.base);
   }
 
   async get(...options: Parameters<typeof this.url>) {
-    return (await axios.get(this.url(...options).href)).data;
+    const r = (await axios.get<Blob>(this.url(...options).href)).data;
+    return r;
   }
 }
 

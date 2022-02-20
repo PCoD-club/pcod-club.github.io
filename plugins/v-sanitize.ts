@@ -32,6 +32,12 @@ export const FILTER_STRIP: IOptions = {
   allowedTags: [],
   allowedAttributes: {},
 };
+const FILTERS = {
+  strip: FILTER_STRIP,
+  inline: FILTER_INLINE,
+  nothing: FILTER_NOTHING,
+  basic: FILTER_BASIC,
+};
 
 export default defineNuxtPlugin((nuxt) => {
   nuxt.vueApp.directive("sanitize", (el, binding) => {
@@ -51,18 +57,22 @@ export default defineNuxtPlugin((nuxt) => {
       }
     }
   });
-  nuxt.vueApp.config.globalProperties.$sanitize = (
-    dirty: string,
-    mode = ""
-  ) => {
-    return sanitizeHtml(
-      dirty,
-      {
-        strip: FILTER_STRIP,
-        inline: FILTER_INLINE,
-        nothing: FILTER_NOTHING,
-        basic: FILTER_BASIC,
-      }[mode]
-    );
+
+  const $sanitize = (dirty: string, mode = "") => {
+    return sanitizeHtml(dirty, FILTERS[mode]);
+  };
+
+  type SanitizeHelper = typeof $sanitize & {
+    [m in keyof typeof FILTERS]: (dirty: string) => string;
+  };
+
+  Object.keys(FILTERS).forEach((mode: keyof typeof FILTERS) => {
+    $sanitize[mode] = (dirty) => $sanitize(dirty, mode);
+  });
+
+  return {
+    provide: {
+      sanitize: $sanitize as SanitizeHelper,
+    },
   };
 });

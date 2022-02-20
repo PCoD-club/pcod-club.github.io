@@ -20,7 +20,7 @@ export default defineNuxtConfig({
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
 
-  buildModules: ["@nuxtjs/tailwindcss"],
+  buildModules: ["@nuxtjs/tailwindcss", "@vueuse/nuxt"],
 
   build: {
     transpile: ["luxon"],
@@ -31,6 +31,6 @@ export default defineNuxtConfig({
   },
 
   privateRuntimeConfig: {
-    MEETUP_PROXY_URL: "https://api.meetup.com/gql",
+    MEETUP_GQL: "https://api.meetup.com/gql",
   },
 });

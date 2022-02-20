@@ -53,7 +53,7 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
     groupId: config.MEETUP_GROUP_ID,
   });
   try {
-    return (await axios.post(config.MEETUP_PROXY_URL, body)).data;
+    return (await axios.post(config.MEETUP_GQL, body)).data;
   } catch (_e) {
     const err: AxiosError = _e;
     res.statusCode = err.response.status;
