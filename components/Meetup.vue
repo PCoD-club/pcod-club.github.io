@@ -1,5 +1,5 @@
 <script setup>
-const meetup = await useMeetup();
+const meetup = useMeetup();
 </script>
 
 <template>
@@ -11,7 +11,9 @@ const meetup = await useMeetup();
         })})`"
         class="col-span-3 row-span-5 bg-top bg-contain bg-no-repeat"
       />
-      <div class="col-span-9 text-lg">{{ meetup.name }}</div>
+      <div class="col-span-9 text-lg font-semibold font-display">
+        {{ meetup.name }}
+      </div>
       <div class="col-span-9 row-span-4">
         <div
           v-snip="4"

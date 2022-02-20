@@ -1,12 +1,12 @@
-import { ComputedRef } from "nuxt3/dist/app/compat/capi";
+import { Ref } from "nuxt3/dist/app/compat/capi";
 import MeetupGroup from "./meetup";
 import * as Response from "./response";
 
-export default async function (
+export default function (
   url: URL | string = "/api/meetup",
   body?: any
-): Promise<ComputedRef<MeetupGroup>> {
-  const resp = await useFetch<Response.GroupResponse>(url.toString(), {
+): Ref<MeetupGroup> {
+  const resp = useFetch<Response.GroupResponse>(url.toString(), {
     method: "POST",
     body: body,
   });

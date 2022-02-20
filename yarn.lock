@@ -4841,7 +4841,7 @@ number-is-nan@^1.0.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
-nuxt3@latest:
+nuxt3@^3.0.0-27420403.16e2a54:
   version "3.0.0-27420403.16e2a54"
   resolved "https://registry.yarnpkg.com/nuxt3/-/nuxt3-3.0.0-27420403.16e2a54.tgz#40d3a4ee689f65c8aa15c3621c52df000f543f0b"
   integrity sha512-TuTSPDMlfAFPDVPDV3zYkt2RF9gN6KCoSZLt7KTHF07U/pNcY7lk53KXEz8CT6igVw2WLb0cNy3b9t6x3UOkKw==
@@ -6599,9 +6599,9 @@ type-fest@^0.8.0:
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
 
 type-fest@^2.11.2:
-  version "2.11.2"
-  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-2.11.2.tgz#5534a919858bc517492cd3a53a673835a76d2e71"
-  integrity sha512-reW2Y2Mpn0QNA/5fvtm5doROLwDPu2zOm5RtY7xQQS05Q7xgC8MOZ3yPNaP9m/s/sNjjFQtHo7VCNqYW2iI+Ig==
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-2.12.0.tgz#ce342f58cab9114912f54b493d60ab39c3fc82b6"
+  integrity sha512-Qe5GRT+n/4GoqCNGGVp5Snapg1Omq3V7irBJB3EaKsp7HWDo5Gv2d/67gfNyV+d5EXD+x/RF5l1h4yJ7qNkcGA==
 
 type-is@^1.6.16:
   version "1.6.18"
