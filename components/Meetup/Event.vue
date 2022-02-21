@@ -12,6 +12,13 @@ const cleanDescription = computed(() =>
     .filter((p) => !p.match(/^\*|www\./g))
     .join("\n\n")
 );
+
+let calendar = computed(() => {
+  if (["windows", "android"].includes(useUserAgent().os.name.toLowerCase())) {
+    return { href: props.event.gcal.render(), onClick: undefined };
+  }
+  return { href: "#", onClick: () => props.event.ical.download() };
+});
 </script>
 
 <template>
@@ -42,7 +49,7 @@ const cleanDescription = computed(() =>
         >{{ event.venue.name }}, {{ event.venue.address }}</span
       >
     </a>
-    <a class="block" href="#" @click="event.ical.download()">
+    <a class="block" :href="calendar.href" @click="calendar.onClick">
       <v-icon name="fa-calendar-plus" />
       <span class="ml-2">{{
         event.datetime.toLocaleString({
