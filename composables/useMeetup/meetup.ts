@@ -55,7 +55,7 @@ export class MeetupVenue {
 
   get gmaps(): URL {
     const gmaps = new URL("https://maps.google.com/");
-    gmaps.searchParams["q"] = this;
+    gmaps.searchParams.set("q", this.toString());
     return gmaps;
   }
   url = this.gmaps;

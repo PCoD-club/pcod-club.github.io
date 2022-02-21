@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { MeetupEvent } from "~~/composables/useMeetup/meetup";
+import { MeetupEvent, MeetupEventType } from "~~/composables/useMeetup/meetup";
+
 const props = defineProps<{
   event: MeetupEvent;
 }>();
@@ -13,21 +14,32 @@ const cleanDescription = computed(() =>
 </script>
 
 <template>
-  <a
-    :href="event.url.href"
-    class="bg-slate-700 rounded-md mt-4 p-2 grid grid-cols-8 gap-x-2"
-  >
-    <div
-      class="col-span-1 row-span-3 bg-top bg-contain bg-no-repeat"
-      :style="`background-image: url(${event.image.url({ size: [120, 120] })})`"
-    />
-    <div class="col-span-7 font-display">
-      {{ event.title }}
+  <div class="bg-slate-700 rounded-md mt-4 p-2 space-y-1">
+    <a :href="event.url.href" class="grid grid-cols-8 gap-x-2">
+      <div
+        class="col-span-1 row-span-3 bg-top bg-contain bg-no-repeat"
+        :style="`background-image: url(${event.image.url({
+          size: [120, 120],
+        })})`"
+      />
+      <div class="col-span-7 font-display">
+        {{ event.title }}
+      </div>
+      <div
+        v-snip="3"
+        v-sanitize.strip="cleanDescription"
+        class="col-span-7 row-span-2 text-sm text-gray-400 italic break-words"
+      />
+    </a>
+    <div v-if="event.type == MeetupEventType.ONLINE">
+      <v-icon name="fa-video" />
+      <span class="ml-2">Online Event</span>
     </div>
-    <div
-      v-snip="3"
-      v-sanitize.strip="cleanDescription"
-      class="col-span-7 row-span-2 text-sm text-gray-400 italic break-words"
-    />
-  </a>
+    <a v-else class="block" :href="event.venue.gmaps.href">
+      <v-icon name="fa-map-marker-alt" />
+      <span class="ml-2"
+        >{{ event.venue.name }}, {{ event.venue.address }}</span
+      >
+    </a>
+  </div>
 </template>

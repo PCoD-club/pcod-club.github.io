@@ -35,6 +35,7 @@
     "lodash": "^4.17.21",
     "luxon": "^2.3.0",
     "nuxt3": "^3.0.0-27420403.16e2a54",
+    "oh-vue-icons": "^1.0.0-rc2",
     "prettier": "^2.5.1",
     "sanitize-html": "^2.7.0",
     "typescript": "^4.5.5",

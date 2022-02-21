@@ -11,8 +11,14 @@ const meetup = useMeetup();
         })})`"
         class="col-span-3 row-span-5 bg-top bg-contain bg-no-repeat"
       />
-      <div class="col-span-9 text-lg font-semibold font-display">
+      <div
+        class="col-span-9 text-lg font-semibold font-display flex flex-row justify-between items-center"
+      >
         {{ meetup.name }}
+        <v-icon
+          name="fa-meetup"
+          class="pb-1 pr-1 fill-gray-400 h-full w-auto"
+        />
       </div>
       <div class="col-span-9 row-span-4">
         <div
