@@ -22,7 +22,7 @@ let calendar = computed(() => {
 </script>
 
 <template>
-  <div class="bg-slate-700 rounded-md mt-4 p-2 space-y-1">
+  <div class="bg-slate-700 rounded-md mt-4 p-2 space-y-1 touch:space-y-4">
     <a :href="event.url.href" class="grid grid-cols-8 gap-x-2">
       <div
         class="col-span-1 row-span-3 bg-top bg-contain bg-no-repeat"

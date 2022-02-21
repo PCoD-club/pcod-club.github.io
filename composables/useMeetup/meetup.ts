@@ -1,7 +1,8 @@
 import axios from "axios";
 import * as Response from "./response";
 import { DateTime } from "luxon";
-import { ICalendar, GoogleCalendar, CalendarOptions } from "datebook";
+import { ICalendar, CalendarOptions } from "datebook";
+import GoogleCalendar from "datebook/src/GoogleCalendar";
 
 export type MeetupImageType = "jpg" | "png" | "webp";
 

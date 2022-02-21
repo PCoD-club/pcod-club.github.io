@@ -15,6 +15,9 @@ module.exports = {
       fontFamily: {
         sans: ["Quicksand", ...defaultTheme.fontFamily.sans],
       },
+      screens: {
+        touch: { raw: "(hover: none), (pointer: coarse)" },
+      },
     },
     fontFamily: {
       display: ["Oswald", "sans"],
