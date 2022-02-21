@@ -14,7 +14,9 @@ const cleanDescription = computed(() =>
 );
 
 let calendar = computed(() => {
-  if (["windows", "android"].includes(useUserAgent().os.name.toLowerCase())) {
+  if (
+    ["windows", "android"].includes(useUserAgent()?.os?.name?.toLowerCase())
+  ) {
     return { href: props.event.gcal.render(), onClick: undefined };
   }
   return { href: "#", onClick: () => props.event.ical.download() };
