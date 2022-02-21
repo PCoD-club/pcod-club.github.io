@@ -32,7 +32,7 @@ let calendar = computed(() => {
           size: [120, 120],
         })})`"
       />
-      <div class="col-span-7 font-display">
+      <div class="col-span-7 font-display min-h-[2.5rem] md:min-h-0">
         {{ event.title }}
       </div>
       <div
