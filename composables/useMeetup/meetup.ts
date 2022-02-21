@@ -23,8 +23,7 @@ export class MeetupImage {
   }
 
   async get(...options: Parameters<typeof this.url>) {
-    const r = (await axios.get<Blob>(this.url(...options).href)).data;
-    return r;
+    return (await axios.get(this.url(...options).href)).data;
   }
 }
 

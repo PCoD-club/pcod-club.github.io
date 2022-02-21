@@ -24,7 +24,7 @@ const meetup = useMeetup();
     </a>
     <hr class="border-gray-700" />
     <div v-for="event in meetup.events" :key="event.id" class="col-span-full">
-      {{ event.title }}
+      <MeetupEvent :event="event" />
     </div>
   </div>
 </template>
