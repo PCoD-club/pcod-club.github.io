@@ -1,5 +1,5 @@
 <script setup></script>
 
 <template>
-  <div class="sticky w-screen h-14 bg-primary">navbar</div>
+  <div class="sticky w-full h-14 bg-primary">navbar</div>
 </template>

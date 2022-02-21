@@ -22,7 +22,7 @@ let calendar = computed(() => {
 </script>
 
 <template>
-  <div class="bg-slate-700 rounded-md mt-4 p-2 space-y-1 touch:space-y-4">
+  <div class="bg-slate-700 rounded-md mt-4 p-2 space-y-2 touch:space-y-4">
     <a :href="event.url.href" class="grid grid-cols-8 gap-x-2">
       <div
         class="col-span-1 row-span-3 bg-top bg-contain bg-no-repeat"
@@ -36,7 +36,7 @@ let calendar = computed(() => {
       <div
         v-snip="3"
         v-sanitize.strip="cleanDescription"
-        class="col-span-7 row-span-2 text-sm text-gray-400 italic break-words"
+        class="col-span-8 md:col-span-7 row-span-2 text-sm text-gray-400 italic break-words"
       />
     </a>
     <div v-if="event.type == MeetupEventType.ONLINE">
