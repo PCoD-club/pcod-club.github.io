@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { MeetupEvent, MeetupEventType } from "~~/composables/useMeetup/meetup";
+import { DateTime } from "luxon";
 
 const props = defineProps<{
   event: MeetupEvent;
@@ -40,6 +41,16 @@ const cleanDescription = computed(() =>
       <span class="ml-2"
         >{{ event.venue.name }}, {{ event.venue.address }}</span
       >
+    </a>
+    <a class="block" href="#" @click="event.ical.download()">
+      <v-icon name="fa-calendar-plus" />
+      <span class="ml-2">{{
+        event.datetime.toLocaleString({
+          ...DateTime.DATETIME_FULL,
+          weekday: "short",
+          timeZoneName: undefined,
+        })
+      }}</span>
     </a>
   </div>
 </template>

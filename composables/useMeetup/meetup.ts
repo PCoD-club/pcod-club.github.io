@@ -1,6 +1,7 @@
 import axios from "axios";
 import * as Response from "./response";
 import { DateTime } from "luxon";
+import { ICalendar, GoogleCalendar, CalendarOptions } from "datebook";
 
 export type MeetupImageType = "jpg" | "png" | "webp";
 
@@ -85,6 +86,23 @@ export class MeetupEvent {
     this.venue = new MeetupVenue(data.venue);
     this.datetime = DateTime.fromISO(data.dateTime);
     this.image = new MeetupImage(data.image);
+  }
+
+  get calendar(): CalendarOptions {
+    return {
+      title: this.title,
+      location: this.venue.toString(),
+      description: this.description,
+      start: this.datetime.toJSDate(),
+    };
+  }
+
+  get ical() {
+    return new ICalendar(this.calendar);
+  }
+
+  get gcal() {
+    return new GoogleCalendar(this.calendar);
   }
 }
 
