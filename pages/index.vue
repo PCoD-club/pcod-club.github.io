@@ -1,3 +1,5 @@
 <script setup></script>
 
-<template>hello world</template>
+<template>
+  <Meetup />
+</template>

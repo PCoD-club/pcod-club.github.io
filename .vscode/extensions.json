@@ -5,6 +5,7 @@
     "esbenp.prettier-vscode",
     "editorconfig.editorconfig",
     "allanoricil.nuxt-vscode-extension",
-    "christian-kohler.path-intellisense"
+    "christian-kohler.path-intellisense",
+    "bradlc.vscode-tailwindcss"
   ]
 }
